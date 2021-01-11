@@ -1,0 +1,129 @@
+{
+  "zn": {
+    "found": "由 Cortex 创立",
+    "subscibe": "subscibe",
+    "links": [
+      {
+        "name" : "条款",
+        "url": ""
+      },
+      {
+        "name" : "艺术家",
+        "url": ""
+      },
+      {
+        "name" : "关于我们",
+        "url": ""
+      },
+      {
+        "name" : "条款",
+        "url": ""
+      },
+      {
+        "name" : "艺术家",
+        "url": ""
+      },
+      {
+        "name" : "关于我们",
+        "url": ""
+      },
+      {
+        "name" : "条款",
+        "url": ""
+      },
+      {
+        "name" : "艺术家",
+        "url": ""
+      },
+      {
+        "name" : "关于我们",
+        "url": ""
+      }
+    ]
+  },
+  "en": {
+    "found": "Founded by Cortex",
+    "subscibe": "subscibe",
+    "links": [
+      {
+        "name" : "terms",
+        "url": ""
+      },
+      {
+        "name" : "artist",
+        "url": ""
+      },
+      {
+        "name" : "About us",
+        "url": ""
+      },
+      {
+        "name" : "terms",
+        "url": ""
+      },
+      {
+        "name" : "artist",
+        "url": ""
+      },
+      {
+        "name" : "About us",
+        "url": ""
+      },
+      {
+        "name" : "terms",
+        "url": ""
+      },
+      {
+        "name" : "artist",
+        "url": ""
+      },
+      {
+        "name" : "About us",
+        "url": ""
+      }
+    ]
+    
+  },
+  "hn": {
+    "found": "Cortex 창립",
+    "subscibe": "subscibe",
+    "links": [
+      {
+        "name" : "조항",
+        "url": ""
+      },
+      {
+        "name" : "예술가",
+        "url": ""
+      },
+      {
+        "name" : "우리가 누구인가에 대해",
+        "url": ""
+      },
+      {
+        "name" : "조항",
+        "url": ""
+      },
+      {
+        "name" : "예술가",
+        "url": ""
+      },
+      {
+        "name" : "우리가 누구인가에 대해",
+        "url": ""
+      },
+      {
+        "name" : "조항",
+        "url": ""
+      },
+      {
+        "name" : "예술가",
+        "url": ""
+      },
+      {
+        "name" : "우리가 누구인가에 대해",
+        "url": ""
+      }
+    ]
+  }
+}

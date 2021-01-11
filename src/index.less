@@ -1,0 +1,169 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  transition: all 1s;
+  background-color: black !important;
+  color: white !important;
+}
+.ant-notification {
+  top: 100px !important;
+}
+ol, ul {
+  padding-left: 30px;
+}
+a {
+  color: black;
+}
+p, h1,h2,h3,h4,h5{
+  margin: 0;
+}
+#app {
+}
+
+#head{
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 999;
+  .userImg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 20px;
+    left: calc(75% + 300px);
+    overflow: hidden;
+    img{
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+    }
+  }
+  .head-content{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .head-logo {
+      line-height: 80px;
+      height: 80px;
+    }
+    .headRight {
+      float: right;
+      position: relative;
+      .head-search {
+        width: 1200px;
+        height: 80px;
+        position: fixed;
+        left: calc(50% - 600px);
+        transition: all .5s;
+        top: -80px;
+        input {
+          border-radius: 0;
+          border: none;
+          background-color: rgba(0,0,0,0.9);;
+          line-height: 80px;
+          height: 80px;
+          caret-color: white;
+          color: #888;
+          font-size: 24px;
+        }
+        &.show {
+          transform: translateY(80px);
+        }
+      }
+      a {
+        margin: 0 30px;
+        color: white;
+      }
+    }
+  }
+  .ant-dropdown-link{
+    line-height: 80px;
+  }
+  .ant-dropdown-link{
+    cursor: pointer;
+  }
+}
+
+
+#appFoot{
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  height: 400px;
+  h2 {
+    font-size: 18px;
+    color: white;
+    line-height: 80px;
+    span{
+      font-size: 36px;
+      line-height: 80px;
+      margin-right: 40px;
+    }
+  }
+  .linklist{
+    width: 60%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    left: 0;
+    top: 200px;
+    a {
+      font-size: 12px;
+      color: #888;
+      display: block;
+      width: 25%;
+      height: 30px;
+      margin-bottom: 10px;
+      &:hover{
+        color: white;
+      }
+    }
+  }
+  .subscibe{
+    position: absolute;
+    right: 0;
+    top: 200px;
+    color: white;
+    input {
+      background-color: #343434;
+      border-radius: 5px;
+      color: white;
+    }
+  }
+}
+// 重写ant部分组件样式
+
+.ant-notification-notice {
+  background: rgba(0,0,0,0.6) !important;
+  color: white !important;
+  .ant-notification-notice-message {
+    color: white !important;
+  }
+  .ant-notification-notice-close {
+    color: white;
+    transition: .5s all;
+    &:hover {
+      color: white;
+      transform: scale(1.4);
+    }
+  }
+}
+.userPop{
+  cursor: pointer;
+  a{
+    color: black;
+    &:hover {
+      color: #1890ff;
+    }
+  }
+  p {
+    &:hover {
+      color: #1890ff;
+    }
+  }
+  
+}

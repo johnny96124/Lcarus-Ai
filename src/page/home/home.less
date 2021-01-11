@@ -1,0 +1,353 @@
+@keyframes introduce{
+  0%{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#home {
+  position: relative;
+  transition: all 1s;
+  transform: translateY(0);
+  #homeIntroduce {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/images/homeback.jpeg');
+    background-size: 100% 100%;
+    position: relative;
+    .dis {
+      bottom: 20%;
+      position: absolute;
+      width: 1200px;
+      left: calc(50% - 600px);
+      .dis1, .dis2{
+        font-size: 32px;
+      }
+      .dis3 {
+        font-size: 14px;
+        text-transform: capitalize;
+        margin-top: 40px;
+      }
+      .buttonList{
+        margin: 40px 0 20px;
+        .ant-btn{
+          border-radius: 20px;
+          padding: 0 40px;
+          margin-right: 40px;
+          background: none;
+          border: 2px solid white;
+          color: white;
+        }
+      }
+    }
+  }
+  #Carouselpic {
+    position: relative;
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 100vh;
+    color: white;
+    h2 {
+      line-height: 40px;
+      margin-top: 10%;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+    }
+    .imgList{
+      position: absolute;
+      width: 1200px;
+      overflow: hidden;
+      height: 400px;
+      top: 50%;
+      transform: translateY(-50%);
+      .imgbox {
+        position: relative;
+        height: 100%;
+        transition: left 1s;
+        .imgShow{
+          width: 600px;
+          position: relative;
+          display: inline-block;
+          height: 100%;
+          transform: scale(0.8);
+          transition: all 1s;
+          opacity: 0.6;
+          &.show {
+            transform: scale(1);
+            opacity: 1;
+           .dis, .name, .artist{
+              display: block;
+            }
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          .dis {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            width: 60%;
+            font-size: 12px;
+            line-height: 20px;
+            display: none;
+          }
+          .name {
+            position: absolute;
+            right: 20px;
+            font-size: 24px;
+            bottom: 50px;
+            font-weight: 600;
+            color: white;
+            display: none;
+          }
+          .artist {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            line-height: 30px;
+            display: none;
+          }
+        }
+      }
+    }
+    .listNum {
+      position: absolute;
+      right: 0;
+      width: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      &>span {
+        display: block;
+        margin: 5px 0;
+        transition: height 1s;
+        font-size: 12px;
+        text-align: right;
+        background: border-box;
+        cursor: pointer;
+        color: #888;
+        position: relative;
+        img {
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 0;
+          height: 100%;
+        }
+        &.show {
+          color: white;
+        }
+        &:hover {
+          font-size: 20px;
+          img {
+            width: 100%;
+          }
+        }
+        &.anticon{
+          color: white;
+          margin: 20px 0;
+        }
+      }
+    }
+    .Progress {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  #ArtistList {
+    position: relative;
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 100vh;
+    h2 {
+      line-height: 40px;
+      margin-top: 10%;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+    }
+    .imgList{
+      position: absolute;
+      width: 800px;
+      overflow: hidden;
+      height: 500px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      .imgbox {
+        position: relative;
+        width: 100%;
+        transition: top 1s;
+        .imgShow{
+          width: 100%;
+          position: relative;
+          height: 300px;
+          transform: scale(0.8);
+          transition: all 1s;
+          opacity: 0.6;
+          &.show {
+            transform: scale(1);
+            opacity: 1;
+            img{
+              opacity: 0.4;
+            }
+            .name, .title{
+              display: block;
+              position: absolute;
+              left: 140px;
+            }
+            .dis {
+              position: absolute;
+              left: 140px;
+            }
+            &:hover {
+              .dis {
+                display: block;
+              }
+            }
+          }
+          img {
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            opacity: 0.8;
+          }
+          .dis {
+            top: 120px;
+            width: 60%;
+            font-size: 12px;
+            line-height: 20px;
+            display: none;
+            z-index: 2;
+            position: relative;
+            span {
+              display: inline-block;
+              animation: introduce .6s ease-out both;
+              letter-spacing: 1px;
+            }
+            .anticon-login{
+              position: absolute;
+              right: -50px;
+              height: 30px;
+              width: 30px;
+              font-size: 30px;
+              top: 50%;
+              transform: translateY(-50%);
+              cursor: pointer;
+              color: white;
+            }
+          }
+          .name {
+            font-size: 24px;
+            line-height: 40px;
+            top: 50px;
+            font-weight: 600;
+            color: white;
+            display: none;
+            z-index: 2;
+          }
+          .title {
+            top: 90px;
+            line-height: 30px;
+            display: none;
+            z-index: 2;
+          }
+        }
+      }
+    }
+    .listNum {
+      position: absolute;
+      left: 0;
+      width: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      &>span {
+        display: block;
+        margin: 5px 0;
+        transition: height 1s;
+        font-size: 12px;
+        text-align: left;
+        background: border-box;
+        cursor: pointer;
+        color: #888;
+        position: relative;
+        span {
+          display: none;
+          font-size: 20px;
+          color: white;
+          position: absolute;
+          top: 0;
+          left: 40px;
+        }
+        &.show {
+          color: white;
+        }
+        &:hover {
+          font-size: 20px;
+          span {
+            display: block;
+          }
+        }
+        &.anticon{
+          color: white;
+          margin: 20px 0;
+        }
+      }
+    }
+    .Progress {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .allArtist{
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      button{
+        background: black;
+        border: 2px solid white;
+        color: white;
+        border-radius: 20px;
+        padding: 0 20px;
+      }
+    }
+  }
+  #joinus {
+    width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    height: calc(100vh - 400px);
+    padding-top: 200px;
+    h2 {
+      text-align: center;
+      color: white;
+    }
+    p {
+      text-align: center;
+      margin-top: 100px;
+      button {
+        background: black;
+        border: 2px solid white;
+        color: white;
+        border-radius: 20px;
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+

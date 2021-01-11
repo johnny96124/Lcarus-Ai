@@ -1,0 +1,90 @@
+#gallery {
+  background-color: white;
+  min-height: 100vh;
+  .box {
+    padding-top: 80px;
+    width: 1200px;
+    margin: 0 auto;
+    .search {
+      h1 {
+        font-size: 60px;
+        font-weight: 800;
+        margin: 40px 0;
+      }
+      .searchButton {
+        display: flex;
+        justify-content: space-between;
+        .left {
+          button {
+            margin-right: 40px;
+            border: 1px solid black;
+            border-radius: 15px;
+            color: black;
+            background-color: white;
+            &.is {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+        .right {
+        }
+      }
+    }
+    .pagBox {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 20px 0;
+      .list {
+        width: 23%;
+        height: 350px;
+        margin: 20px 0;
+        img {
+          width: 100%;
+          height: 250px;
+        }
+        h3 {
+          height: 40px;
+          line-height: 40px;
+          display: flex;
+          justify-content: space-between;
+          font-size: 14px;
+          background-color: #232930;
+          color: white;
+          margin: 0;
+          padding: 0 10px;
+          .price {
+            color: #a66f46;
+            font-size: 18px;
+            margin-left: 10px;
+          }
+          .anticon-heart {
+            line-height: 40px;
+          }
+          a {
+            color: white;
+            margin-right: 20px;
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+              border-radius: 5px;
+              background-color: #b79e7e;
+              margin-right: 4px;
+            }
+          }
+        }
+        p {
+          height: 20px;
+          font-size: 12px;
+        }
+      }
+    }
+    .ant-pagination {
+      text-align: center;
+      height: 80px;
+    }
+  }
+}
