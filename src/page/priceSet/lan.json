@@ -1,0 +1,44 @@
+{
+  "zn": {
+    "canvas": "画布",
+    "price": "艺术品定价",
+    "type1": "一口价",
+    "type2": "拍卖",
+    "type3": "暂不出售",
+    "ok": "确定",
+    "price1": "起拍价",
+    "time1": "拍卖开始时间",
+    "time2": "拍卖持续时间",
+    "price2" : "底价",
+    "day" : "天",
+    "dis" : "作品将被您收录，可在个人中心的收藏列表查看"
+  },
+  "en": {
+    "canvas": "canvas",
+    "price": "Art Pricing",
+    "type1": "fixed price",
+    "type2": "auction",
+    "type3": "Don't sell",
+    "ok": "submit",
+    "price1": "Opening bid",
+    "time1": "start time",
+    "time2": "The duration of the",
+    "price2" : "Floor price",
+    "day" : "day",
+    "dis" : "Your works will be collected by you and can be viewed in the collection list of your personal center"
+  },
+  "hn": {
+    "canvas": "캔버스",
+    "price": "예술품 정가",
+    "type1": "고정가",
+    "type2": "경매",
+    "type3": "불매 운동",
+    "ok": "확정",
+    "price1": "경매 시작 가격",
+    "time1": "시작 시간",
+    "time2": "지속 시간",
+    "price2" : "최저가",
+    "day" : "일",
+    "dis" : "사용자 정의 목록에 있는 작품을 볼 수 있습니다"
+  }
+}

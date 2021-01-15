@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom';
 
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { HEADC } from './component/head/head';
-
-import {whiteRoutes, perRoutes} from './routeconfig';
 import './index.less';
-
 const minterface = require('./interface/marsteContract.json')
 
 declare const window: any;
 
 import   Web3  from 'web3'
 const mainAddress = '0xe2C579f524C9CdC5d82819E6c2BB7D9bBb291c8C'
+
+
 
 let web3Object = {
   web3: {},
@@ -83,9 +82,10 @@ class APP extends React.Component {
     } , 500)
   }
   componentWillUnmount() {
-    clearTimeout(window.walletLogin)
+    clearInterval(window.walletLogin)
   }
   render() {
+    const {whiteRoutes, perRoutes} =  require('./routeconfig')
     return (
       <div id="app">
         <Provider value={this.state}>
@@ -109,5 +109,7 @@ class APP extends React.Component {
     );
   }
 }
-
-ReactDOM.render(<APP />, document.getElementById('root'));
+// 确保在渲染页面时，ctxWeb3（钱包）已经初始化完毕
+window.onload = () => {
+  ReactDOM.render(<APP />, document.getElementById('root'));
+}

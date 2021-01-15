@@ -165,27 +165,42 @@ class Info extends React.Component {
     userid: string;
   };
   componentDidMount() {
-    API.getuserInfo(this.props.userid).
-    then(res => {
-      this.setState((state) => {
-        return {
-          user: {
-            img:
-              'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
-            name: '测试人员',
-            address: this.props.userid,
-            dis: {
-              zn:
-                '中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍',
-              en:
-                'english introduce english introduce english introduce english introduce english introduce',
-              hn:
-                '中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍'
-            }
-          }
-        };
-      });
+    this.setState({
+      user: {
+        img:
+          'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
+        name: '测试人员',
+        address: this.props.userid,
+        dis: {
+          zn:
+            '中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍',
+          en:
+            'english introduce english introduce english introduce english introduce english introduce',
+          hn:
+            '中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍'
+        }
+      }
     })
+    // API.getuserInfo(this.props.userid).
+    // then(res => {
+    //   this.setState({
+    //       user: {
+    //         img:
+    //           'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
+    //         name: '测试人员',
+    //         address: this.props.userid,
+    //         dis: {
+    //           zn:
+    //             '中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍',
+    //           en:
+    //             'english introduce english introduce english introduce english introduce english introduce',
+    //           hn:
+    //             '中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍中文介绍'
+    //         }
+    //       }
+    //     }
+    //   )
+    // })
     
   }
   state: {
@@ -208,7 +223,7 @@ class Info extends React.Component {
               <div className="userinfo">
                 <div className= { is ? 'is imgbox' : 'imgbox'}>
                   <div className='shadowBox'></div>
-                    <Link className='edit' to={`/userEdit${this.state.user.address}`}>{json[value.lan].edit}</Link>
+                    <Link className='edit' to={`/userEdit`}>{json[value.lan].edit}</Link>
                   <img src={this.state.user.img}  alt=""/>
                 </div>
                 <h3>{this.state.user.name}</h3>

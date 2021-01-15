@@ -59,7 +59,7 @@ module.exports = merge(common, {
     port: 8080,
     proxy: {
       '/ai': {
-        target: 'http://www.love614.live/res/barrage',
+        target: 'http://share.cortexlabs.ai:8081',
         pathRewrite: {'^/ai': ''},
         changeOrigin: true,
         secure: false

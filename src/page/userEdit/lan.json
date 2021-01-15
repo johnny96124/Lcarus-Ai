@@ -1,0 +1,39 @@
+{
+  "zn": {
+    "edit": "编辑资料",
+    "avatar":"更换头像",
+    "dis1": "支持JPNG,GIF,JPG格式，推荐尺寸为160px*160px",
+    "name": "昵称",
+    "email": "邮箱",
+    "address": "地区",
+    "webUrl": "个人网址",
+    "introduce": "介绍",
+    "save": "保存设置",
+    "emailM": "邮箱格式错误"
+  },
+  "en": {
+    "edit": "Edit data",
+    "avatar":"replace",
+    "dis1": "use JPNG,GIF,JPG format，recommended： 160px*160px",
+    "name": "name",
+    "email": "email",
+    "address": "address",
+    "webUrl": "Personal web site",
+    "introduce": "introduce",
+    "save": "save setting",
+    "emailM": "Invalid format"
+
+  },
+  "hn": {
+    "edit": "자료 편집",
+    "avatar":"교체",
+    "dis1": "지지 JPNG,GIF,JPG  격식，추천: 160px*160px",
+    "name": "닉네임",
+    "email": "email",
+    "address": "지역",
+    "webUrl": "개인 사이트 주소",
+    "introduce": "소개",
+    "save": "설정 저장",
+    "emailM": "잘못된 형식"
+  }
+}

@@ -15,7 +15,9 @@
     "enterEmail": "邮箱地址",
     "edit": "编辑个人信息",
     "personal": "个人主页",
-    "nologged": "未登录"
+    "nologged": "未登录",
+    "creat": "创建艺术品",
+    "generate": "AI生成图层"
   },
   "en": {
     "searchTip": "Please enter search keywords",
@@ -33,7 +35,9 @@
     "enterEmail": "Your Email",
     "edit": "Edit Personal Information",
     "personal": "Personal Home Page",
-    "nologged": "Not logged in"
+    "nologged": "Not logged in",
+    "creat": "Creat artwork",
+    "generate": "AI Generate the layer"
   },
   "hn": {
     "searchTip": "검색어를 입력하십시오",
@@ -52,6 +56,8 @@
     "enterEmail": "邮箱地址",
     "edit": "개인 정보 편집",
     "personal": "개인 홈페이지",
-    "nologged": "로그인이 없음"
+    "nologged": "로그인이 없음",
+    "creat": "생성 예술품",
+    "generate": "AI 텍스트 프레임 만들기"
   }
 }

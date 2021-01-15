@@ -1,0 +1,29 @@
+{
+  "zn": {
+    "title": "AI艺术品生成",
+    "chance":"选择模型",
+    "model1":"太空图模型",
+    "model2":"飞船图模型",
+    "generate":"生成",
+    "dis": "输入文字，AI生成图像",
+    "down": "下载"
+  },
+  "en": {
+    "title": "AI Art production",
+    "chance":"Selection model",
+    "model1":"Space map model",
+    "model2":"Spaceship diagram model",
+    "generate":"generate",
+    "dis": "，AI Art production",
+    "down": "download"
+  },
+  "hn": {
+    "title": "AI 예술품 생성",
+    "chance":"모델 선택",
+    "model1":"우주 지도 모형",
+    "model2":"우주선 모형",
+    "generate":"생성",
+    "dis": "문자를 입력하다，AI 예술품 생성",
+    "down": "다운로드"
+  }
+}

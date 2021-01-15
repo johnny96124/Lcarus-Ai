@@ -1,12 +1,16 @@
 import { Home } from './page/home/index';
 import { User } from './page/user/index';
 import { Gallery } from './page/gallery/index';
+import { userEdit } from './page/userEdit/index';
+import { createArt } from './page/createArt/index';
+import { generateLayer } from './page/generateLayer/index';
+import { priceSet } from './page/priceSet/index';
 import React, { useState } from 'react';
 import { message } from 'antd';
 
 
 declare const window: any;
-const hasCortexw = window.ctxWeb3 && window.ctxWeb3.eth.defaultAccount
+const hasCortexw =  window.ctxWeb3 && window.ctxWeb3.eth.defaultAccount
 
 function noPerDom () {
   const lan = window.localStorage.language
@@ -15,7 +19,7 @@ function noPerDom () {
     en: 'The user is not downloading the wallet or logging in，Please login and refresh the page',
     hn: '사용자가 지갑을 다운로드하지 않았거나 로그인하지 않았습니다. 로그인 후 새로고침'
   }
-  message.error(lans[lan], 10)
+  message.error(lans[lan], 5)
   return <div style={ { 
     color: 'red',
     fontSize: '40px',
@@ -45,12 +49,26 @@ export const whiteRoutes = [
     component: Gallery
   }
 ]
-
 // 需要登录钱包
 export const perRoutes = [
-  // {
-  //   name: 'aaa',
-  //   path: '/aaa',
-  //   component: hasCortexw ?  <div></div> :noPerDom
-  // }
+  {
+    name: '编辑个人信息',
+    path: '/userEdit',
+    component: hasCortexw ?  userEdit : noPerDom
+  },
+  {
+    name: '艺术品上传',
+    path: '/createArt',
+    component: hasCortexw ?  createArt : noPerDom
+  },
+  {
+    name: '艺术品生成',
+    path: '/generateLayer',
+    component: hasCortexw ?  generateLayer : noPerDom
+  },
+  {
+    name: '艺术品定价',
+    path: '/priceSet',
+    component: hasCortexw ?  priceSet : noPerDom
+  }
 ]

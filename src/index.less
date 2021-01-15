@@ -4,6 +4,9 @@ body {
   background-color: black !important;
   color: white !important;
 }
+.clear {
+  clear: both;
+}
 .ant-notification {
   top: 100px !important;
 }
@@ -34,6 +37,7 @@ p, h1,h2,h3,h4,h5{
     top: 20px;
     left: calc(75% + 300px);
     overflow: hidden;
+    color: white;
     img{
       height: 40px;
       width: 40px;
@@ -156,9 +160,11 @@ p, h1,h2,h3,h4,h5{
   cursor: pointer;
   a{
     color: black;
+    margin: 10px 0;
     &:hover {
       color: #1890ff;
     }
+    display: block;
   }
   p {
     &:hover {

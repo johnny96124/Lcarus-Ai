@@ -45,6 +45,7 @@ function HeadRight() {
 }
 
 declare const window: any;
+// 头像和hover显示的dom
 export class GetUserInfoDom extends React.Component {
   constructor(props:any) {
     super(props)
@@ -66,14 +67,24 @@ export class GetUserInfoDom extends React.Component {
         }
       })
     })
+    .catch(res => {
+      _this.setState({
+        userInfo: {
+          img: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
+          // name: '测试人员'
+        }
+      })
+    })
   }
   render(){
     const content = (
       <Consumer>
         {value => (
           <div className='userPop'>
-            <p>{json[value.lan].edit}</p>
+            <Link to={`/userEdit`}>{json[value.lan].edit}</Link>
             <Link to={`/user/${window.ctxWeb3.eth.defaultAccount}`}>{json[value.lan].personal}</Link>
+            <Link to={`/createArt`}>{json[value.lan].creat}</Link>
+            <Link to={`/generateLayer`}>{json[value.lan].generate}</Link>
           </div>
         )}
       </Consumer>
@@ -87,7 +98,7 @@ export class GetUserInfoDom extends React.Component {
           <img src={this.state.userInfo.img} alt=""/>              
         </Popover>
       )}
-    </Consumer>
+      </Consumer>
     )
   }
 } 
@@ -104,15 +115,16 @@ export class HEADC extends React.Component {
   
   render() {
   const userImg = (
-    <Consumer>
-      {value => (
-        value.hasLoginWallet
-        ?
-        <GetUserInfoDom/>
-        : 
-        <div className='userImg'>{json[value.lan].nologged}</div>
-      )}
-    </Consumer>
+    <GetUserInfoDom/>
+    // <Consumer>
+    //   {value => (
+    //     value.hasLoginWallet
+    //     ?
+    //     <GetUserInfoDom/>
+    //     : 
+    //     <div className='userImg'>{json[value.lan].nologged}</div>
+    //   )}
+    // </Consumer>
     
   )
     return (

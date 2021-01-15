@@ -1,0 +1,130 @@
+
+#createArt{
+  background-color: white;
+  min-height: 100vh;
+  color: black;
+  .ant-input-number-handler-wrap {
+    display: none;
+  }
+  .contentBox{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    h1 {
+      font-size: 60px;
+      font-weight: 800;
+      margin: 40px 0;
+    }
+  }
+  .steps {
+    height: 60px;
+  }
+  .stepContent {
+    height: 600px;
+    margin: 20px 0;
+    overflow: scroll;
+  }
+  .nextButton{
+    display: flex;
+    justify-content: space-between;
+  }
+  .ant-btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 0 40px;
+  }
+  .ant-btn[disabled]{
+    background-color: #888;
+  }
+  .stepContent {
+    input {
+      border-radius: 15px;
+    }
+    .step1Content {
+      h2 {
+        border-bottom: 1px dotted #888;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        span{
+          width: 140px;
+          display: inline-block;
+        }
+        input {
+          width: 800px;
+          display: inline-block;
+        }
+      }
+      .add {
+        margin-bottom: 20px;
+      }
+      .layerBox {
+        display: flex;
+        .layerLeft {
+          width: 200px;
+          span {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            display: block;
+            background-color: #4c4c4c;
+            color: white;
+            text-align: center;
+          }
+        }
+        .layerRight {
+          button {
+            padding: 0 10px;
+            background-color: unset;
+            color: unset;
+          }
+          position: relative;
+          input {
+            width: 800px;
+          }
+          textarea{
+            margin: 20px 0;
+            width: 800px;
+            display: block;
+          }
+        }
+      }
+    }
+    .step2Content {
+      .canvasBox {
+        position: relative;
+        margin: 0 auto;
+        border: 1px solid #888;
+        margin-bottom: 20px;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+      .imgList {
+        img {
+          float: left;
+          width: 200px;
+          max-height: 200px;
+          margin: 0 20px;
+          &.is {
+            border: 1px solid red;
+          }
+        }
+      }
+    }
+    .step3Content {
+      .canvasBox {
+        button {
+          position: absolute;
+          left: -200px;
+        }
+      }
+      .step3 {
+        margin-top:20px;
+      }
+    }
+  }
+}
