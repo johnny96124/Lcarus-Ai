@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { HEADC } from './component/head/head';
+import {NoPerDom} from './routeconfig'
 import './index.less';
 const minterface = require('./interface/marsteContract.json')
 
 declare const window: any;
 
 import   Web3  from 'web3'
-const mainAddress = '0xe2C579f524C9CdC5d82819E6c2BB7D9bBb291c8C'
+// 0x63a2123ff19d62907f6e1a79011d2571d97934f4
+const mainAddress = '0xe2C579f524C9CdC5d82819E6c2BB7D9bBb291c8C' 
 
 
 
@@ -99,7 +101,7 @@ class APP extends React.Component {
               }
               {
                 perRoutes.map(item => (
-                  <Route path={item.path} component={item.component} key={item.name} exact/>
+                  <Route path={item.path} component={this.state.hasLoginWallet ? item.component : NoPerDom} key={item.name} exact/>
                 ))
               }
             </Switch>

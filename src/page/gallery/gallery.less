@@ -14,9 +14,9 @@
       .searchButton {
         display: flex;
         justify-content: space-between;
-        .left {
+        .left,.center {
           button {
-            margin-right: 40px;
+            margin-right: 20px;
             border: 1px solid black;
             border-radius: 15px;
             color: black;
@@ -40,9 +40,69 @@
         width: 23%;
         height: 350px;
         margin: 20px 0;
+        background-color: #232930;
+        position: relative;
+        .type {
+          position: absolute;
+          display: block;
+          top: 190px;
+          width: 40px;
+          height: 60px;
+          line-height: 60px;
+          padding-left:5px ;
+          color: white;
+          z-index: 3;
+          font-size: 30px;
+          font-weight: 600;
+          &.en{
+            font-size: 16px;
+            top: 200px;
+          }
+          &.hn{
+            font-size: 20px;
+            top: 200px;
+          }
+        }
+        &.auction1 {
+          &::before {
+            content: "";
+            border-bottom: 80px solid #57b27a;
+          }
+        }
+        &.auction2 {
+          &::before {
+            content: "";
+            border-bottom: 80px solid #eb973f;
+          }
+        }
+        &.auction3 {
+          &::before {
+            content: "";
+            border-bottom: 80px solid #53abdd;
+          }
+        }
+        &.auction4 {
+          &::before {
+            content: "";
+            border-bottom: 80px solid #c5315c;
+          }
+        }
+        &::before{
+          border-right: 80px solid transparent;
+          position: absolute;
+          top: 170px;
+          left: 0px;
+          z-index: 2;
+        }
         img {
           width: 100%;
           height: 250px;
+          display: block;
+          position: relative;
+          cursor: pointer;
+        }
+        .flur {
+          filter: blur(10px)
         }
         h3 {
           height: 40px;
@@ -65,14 +125,13 @@
           a {
             color: white;
             margin-right: 20px;
-            &::before {
-              content: '';
-              display: inline-block;
-              width: 10px;
-              height: 10px;
-              border-radius: 5px;
-              background-color: #b79e7e;
-              margin-right: 4px;
+
+            img {
+              display: inline;
+              margin: 0 5px;
+              border-radius: 50%;
+              height: 20px;
+              width: 20px;
             }
           }
         }

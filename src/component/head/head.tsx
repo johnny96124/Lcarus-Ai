@@ -26,8 +26,8 @@ function HeadRight() {
             {json[value.lan].link0}
           </Link>
           <Link to="/gallery">{json[value.lan].link1}</Link>
-          <Link to="">{json[value.lan].link2}</Link>
-          <Link to="">{json[value.lan].link3}</Link>
+          {/* <Link to="">{json[value.lan].link2}</Link>
+          <Link to="">{json[value.lan].link3}</Link> */}
           <LanChance></LanChance>
           <SearchOutlined onClick={showModal}></SearchOutlined>
           <div className={`head-search ${isModalVisible && 'show'}`}>
@@ -64,14 +64,7 @@ export class GetUserInfoDom extends React.Component {
         userInfo: {
           img: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
           // name: '测试人员'
-        }
-      })
-    })
-    .catch(res => {
-      _this.setState({
-        userInfo: {
-          img: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070453827,1163403148&fm=26&gp=0.jpg',
-          // name: '测试人员'
+          ...res
         }
       })
     })
@@ -114,19 +107,6 @@ export class HEADC extends React.Component {
   }
   
   render() {
-  const userImg = (
-    <GetUserInfoDom/>
-    // <Consumer>
-    //   {value => (
-    //     value.hasLoginWallet
-    //     ?
-    //     <GetUserInfoDom/>
-    //     : 
-    //     <div className='userImg'>{json[value.lan].nologged}</div>
-    //   )}
-    // </Consumer>
-    
-  )
     return (
       <Consumer>
         {
@@ -138,9 +118,17 @@ export class HEADC extends React.Component {
                 </div>
                 <HeadRight></HeadRight>
               </div>
-              <div className='userImg'>
-                {userImg}
-              </div>
+              {
+                value.hasLoginWallet
+                ?
+                <div className='userImg'>
+                  <GetUserInfoDom/>
+                </div>
+                : 
+                <div className='nologin'>
+                  {json[value.lan].nologged}
+                </div>
+              }
             </div>
         )}
       </Consumer>

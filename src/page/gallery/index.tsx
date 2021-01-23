@@ -30,7 +30,8 @@ class Listshow extends React.Component {
     this.getUserinfo2 = this.getUserinfo2.bind(this);
     this.onChange = this.onChange.bind(this);
     this.state = {
-      auction: 0, // 0:全部，1拍卖中，2即将拍卖
+      auction: 0, // 0:全部，1拍卖中，2即将拍卖，3：售卖（一口价的物品， 4：不卖的物品
+      imgType: 0, // 0: 全部， 1主画布， 2图层
       collation: 0, // 搜索结果排序规则
       list: [],
       total: 1,
@@ -42,7 +43,8 @@ class Listshow extends React.Component {
     this.getUserinfo2(1)
   }
   state: {
-    auction: number, // 0:全部，1拍卖中，2即将拍卖
+    auction: number,
+    imgType: number,
     collation: number, // 搜索结果排序规则
     list: Array<any>,
     total: number,
@@ -52,7 +54,7 @@ class Listshow extends React.Component {
   onChange (pageNumber) {
     this.getUserinfo2(pageNumber)
   }
-  // 获取用户信息
+  // 画廊列表
   getUserinfo2(pagenum: number) {
     this.setState({loading: true})
     const searchData = { 
@@ -69,10 +71,11 @@ class Listshow extends React.Component {
         collection: false,
         look: '125',
         parice: '0.6ETH',
+        token: Math.ceil(Math.random() * 10000 ),
         hasAddress: '0x1212121212121212121212',
         artistAddress: '0x1313131313131313131313',
         countdown: 126400000,
-        auction: 1,
+        auction: Math.ceil(Math.random() * 4),
         priceType: '1'
       }
     })
@@ -122,6 +125,20 @@ class Listshow extends React.Component {
                   <Button className= {this.state.auction === 2 ? 'is' : ''} onClick={() => {
                     this.setState({auction: 2}); this.getUserinfo2(1)
                   }}>{json[value.lan].auction2}</Button>
+                  <Button className= {this.state.auction === 3 ? 'is' : ''} onClick={() => {
+                    this.setState({auction: 3}); this.getUserinfo2(1)
+                  }}>{json[value.lan].auction3}</Button>
+                  <Button className= {this.state.auction === 4 ? 'is' : ''} onClick={() => {
+                    this.setState({auction: 4}); this.getUserinfo2(1)
+                  }}>{json[value.lan].auction4}</Button>
+                </div>
+                <div className='center'>
+                  <Button className= {this.state.imgType === 1 ? 'is' : ''} onClick={() => {
+                    this.setState({imgType: 1}); this.getUserinfo2(1)
+                  }}>{json[value.lan].imgType1}</Button>
+                  <Button className= {this.state.imgType === 2 ? 'is' : ''} onClick={() => {
+                    this.setState({imgType: 2}); this.getUserinfo2(1)
+                  }}>{json[value.lan].imgType2}</Button>
                 </div>
                 <div className='right'>
                   <Dropdown overlay={menu}>
@@ -136,8 +153,12 @@ class Listshow extends React.Component {
               <div className="pagBox">
                 {
                   this.state.list.map((item,index) => (
-                    <div className="list"  key = {index}>
-                      <img src={item.img} alt="" />
+                    <div className={`list auction${item.auction}`} key = {index}>
+
+                      <Link to={`/auction/${item.artistAddress}`}>
+                        <img src={item.img} className='flur' alt=""  />
+                      </Link>
+                      <span className={`type ${value.lan}`}>{json[value.lan].show[item.auction - 1]}</span>
                       <h3>
                         <span className="name">{item.name}</span>
                         <span>
@@ -145,12 +166,15 @@ class Listshow extends React.Component {
                           <span className="price">{item.parice}</span>
                         </span>
                       </h3>
-                      <h3>
+                      
+                      <h3 className='hasor'>
                         <span>
                           <Link to={`/user/${item.artistAddress}`}>
+                            <img src={item.img} alt=""/>
                             {json[value.lan].artist}
                           </Link>
                           <Link to={`/user/${item.hasAddress}`}>
+                            <img src={item.img} alt=""/>
                             {json[value.lan].holders}
                           </Link>
                         </span>
@@ -159,7 +183,9 @@ class Listshow extends React.Component {
                           style={{ color: item.collection ? 'green' : 'red' }}
                         />
                       </h3>
-                      <p style = {{backgroundColor: (item.auction === 1 ? 'green' : 'd96c5d')}}>
+                      {
+                        (item.auction === 1 || item.auction === 2) &&
+                        <p style = {{backgroundColor: ['#57b27a', '#eb973f'][item.auction - 1]}}>
                           {json[value.lan].countdown}:  &nbsp;
                           {getday(item.countdown)}  
                           {json[value.lan].day}  &nbsp;
@@ -170,6 +196,8 @@ class Listshow extends React.Component {
                           {gets(item.countdown % (1000 * 60))}  
                           {json[value.lan].seconds}
                       </p>
+                      }
+                      
                     </div>
                   ))
                 }

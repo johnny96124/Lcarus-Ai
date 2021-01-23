@@ -21,7 +21,7 @@ export function Foot() {
             ))}
           </div>
           <div className="subscibe">
-            <Input placeholder="SUBSCIBE"></Input>
+            {/* <Input placeholder="SUBSCIBE"></Input> */}
           </div>
         </div>
       )}

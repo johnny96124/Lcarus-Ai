@@ -1,6 +1,7 @@
 import { Home } from './page/home/index';
 import { User } from './page/user/index';
 import { Gallery } from './page/gallery/index';
+import { Auction } from './page/auction/index';
 import { userEdit } from './page/userEdit/index';
 import { createArt } from './page/createArt/index';
 import { generateLayer } from './page/generateLayer/index';
@@ -10,9 +11,9 @@ import { message } from 'antd';
 
 
 declare const window: any;
-const hasCortexw =  window.ctxWeb3 && window.ctxWeb3.eth.defaultAccount
+const hasCortexw = () => { return window.ctxWeb3 && window.ctxWeb3.eth.defaultAccount }
 
-function noPerDom () {
+export function NoPerDom () {
   const lan = window.localStorage.language
   const lans = {
     zn: '用户未下载钱包或者没有登录，请登录钱包后刷新页面',
@@ -47,6 +48,11 @@ export const whiteRoutes = [
     name: '画廊',
     path: '/gallery',
     component: Gallery
+  },
+  {
+    name: '拍卖界面',
+    path: '/auction/:token',
+    component: Auction
   }
 ]
 // 需要登录钱包
@@ -54,21 +60,21 @@ export const perRoutes = [
   {
     name: '编辑个人信息',
     path: '/userEdit',
-    component: hasCortexw ?  userEdit : noPerDom
+    component: userEdit
   },
   {
     name: '艺术品上传',
     path: '/createArt',
-    component: hasCortexw ?  createArt : noPerDom
+    component: createArt
   },
   {
     name: '艺术品生成',
     path: '/generateLayer',
-    component: hasCortexw ?  generateLayer : noPerDom
+    component: generateLayer
   },
   {
     name: '艺术品定价',
     path: '/priceSet',
-    component: hasCortexw ?  priceSet : noPerDom
+    component:  priceSet 
   }
 ]

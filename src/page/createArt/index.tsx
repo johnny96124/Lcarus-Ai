@@ -157,21 +157,18 @@ export  class createArt extends React.Component {
       <Consumer>  
         {
           value => (
-              <Popconfirm
-              title={json[value.lan].confirm}
-              onConfirm={
-                () => {
-                  const data = {
-                    canvasName : this.state.uploadData.canvasName,
-                    layers: this.state.uploadData.layers.filter((todo, I) => I != index)
-                  }
-                  this.setState({uploadData: data})
+
+            <DeleteOutlined 
+            onClick={event => {
+              event.stopPropagation()
+              if(confirm(json[value.lan].confirm)) {
+                const data = {
+                  canvasName : this.state.uploadData.canvasName,
+                  layers: this.state.uploadData.layers.filter((todo, I) => I != index)
                 }
+                this.setState({uploadData: data})
               }
-              okText="Yes"
-              cancelText="No">
-              <DeleteOutlined/>
-            </Popconfirm>
+            }}/>
           )
         }
       </Consumer>

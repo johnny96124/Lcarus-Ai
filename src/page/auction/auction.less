@@ -1,0 +1,193 @@
+
+#auction{
+  background-color: white;
+  min-height: 100vh;
+  padding: 100px 0;
+  .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  .info {
+    width: 1200px;
+    margin: 0 auto;
+    height: 800px;
+    .imgAndInfo {
+      width: 900px;
+      height: 800px;
+      .auctionRecord {
+        margin-top: 20px;
+        h2 {
+          line-height: 40px;
+          font-size: 18px;
+          font-weight: 600;
+        }
+        .ant-table-wrapper {
+          .ant-table-thead{
+            display: none;
+          }
+          .ant-pagination{
+            display: none;
+          }
+        }
+        width: 800px;
+        height: 280px;
+      } 
+      .userInfoBox {
+        width: 220px;
+        height: 520px;
+        .userInfo {
+          width: 100%;
+          h2 {
+            font-size: 24px;
+            font-weight: 600;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            line-height: 40px
+          }
+          .user {
+            height: 60px;
+            margin-bottom: 20px;
+            img {
+              display: block;
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              margin-right: 20px;
+              cursor: pointer;
+            }
+            &>div {
+              width: 140px;
+              p {
+                color: #888888;
+                h3{
+                  font-size: 14px;
+                  font-weight: 600;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                }
+              }
+            }
+          }
+          .look {
+            padding:20px 0;
+            border-bottom: 1px solid #888888;
+            color: black;
+            .anticon{
+              color: red;
+              font-size: 28px;
+              margin-right: 10px;
+            }
+            &>span {
+              display: inline-block;
+              width: 50%;
+            }
+          }
+          .price {
+            margin-top: 20px;
+            .priceType {
+              font-size: 16px;
+              font-weight: 600;
+            }
+            p {
+              font-size: 14px;
+              color: black;
+              .priceNum {
+                color: #4aa69f;
+                display: inline-block;
+                font-size: 24px;
+                margin: 0 20px;
+              }
+            }
+          }
+        }
+      }
+      .imgShow {
+        width: 650px;
+        max-width: 650px;
+        max-height: 500px;
+        img {
+          width: 100%;
+          max-height: 500px;
+        }
+        p {
+          height: 20px;
+          color: white;
+        }
+      }
+    }
+    .detailInfo {
+      width: 220px;
+      text-align: left;
+      height: 800px;
+      h2 {
+        font-size: 16px;
+        color: black;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      &>div {
+        font-size: 14px;
+        color: #888;
+        line-height: 20px;
+        max-height: 200px;
+        overflow: hidden;
+        padding: 10px 0;
+        margin: 20px 0;
+      }
+      .canvas{
+        a {
+          display: block;
+          img {
+            width: 220px;
+            min-height: 100px;
+            max-height: 220px;
+          }
+        }
+      }
+    }
+  }
+  .layer {
+    width: 1200px;
+    margin: 0 auto;
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border-bottom: 1px #888 solid;
+    }
+    .imgList{
+      height: 200px;
+      width: 100%;
+      overflow-x: scroll;
+      .listBox {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 200px;
+        img {
+          height: 200px;
+          margin-right: 20px;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
+  .ant-row {
+    display: block;
+    .ant-form-item-label {
+      display: block;
+      text-align: left;
+      font-weight: 600;
+    }
+    input {
+      border: none;
+      border-bottom: 1px #888 solid;
+    }
+  }
+  .ant-btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 0 40px;
+  }
+}

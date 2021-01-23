@@ -249,11 +249,11 @@ function ArtistList() {
               percent={countdown2}
             ></Progress>
           </div>
-          <div className="allArtist">
+          {/* <div className="allArtist">
               <Button onClick={() => {
 
               }}>所有艺术家</Button>
-          </div>
+          </div> */}
         </div>
       )}
     </Consumer>

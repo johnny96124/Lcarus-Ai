@@ -39,7 +39,7 @@ export  class generateLayer extends React.Component {
                   <Option value="2">{json[value.lan].model2}</Option>
                 </Select>
                 <div className='text'>
-                  <Input maxLength={25} placeholder={json[value.lan].dis} onChange={v => this.setState({text: v})}></Input>
+                  <Input.TextArea rows={4} maxLength={25} placeholder={json[value.lan].dis} onChange={v => this.setState({text: v})}></Input.TextArea>
                   <Button disabled={this.state.text.length === 0}>{json[value.lan].generate}</Button>
                 </div>
                 <img src={this.state.url} alt=""/>
