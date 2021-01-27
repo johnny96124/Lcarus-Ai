@@ -11,7 +11,6 @@ import { message } from 'antd';
 
 
 declare const window: any;
-const hasCortexw = () => { return window.ctxWeb3 && window.ctxWeb3.eth.defaultAccount }
 
 export function NoPerDom () {
   const lan = window.localStorage.language

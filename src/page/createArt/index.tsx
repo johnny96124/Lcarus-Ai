@@ -8,6 +8,7 @@ import { Consumer } from '../../index';
 import { Link } from 'react-router-dom';
 import {API, uploadAvatar, walletSign} from '../../fetch/fetch'
 import './createArt.less'
+import { web3Object } from '../../interface/contract.js'
 declare const window: any;
 
 function getBase64(img, callback) {
@@ -79,13 +80,13 @@ export  class createArt extends React.Component {
     if (window.localStorage.uploadData){
       this.setState({uploadData: JSON.parse(window.localStorage.uploadData)})
     }
-    // if (window.localStorage.stepCurrent){
-    //   this.setState({current: window.localStorage.stepCurrent})
+    // window.onbeforeunload=function(e){
+    //   var e = window.event||e;  
+    //   e.returnValue=(json[window.localStorage.language].error7);
     // }
-    window.onbeforeunload=function(e){
-      var e = window.event||e;  
-      e.returnValue=(json[window.localStorage.language].error7);
-    } 
+    console.log(web3Object)
+    web3Object.managerContract.methods.artistWhitelist(window.ctxWeb3.eth.defaultAccount).call({from: window.ctxWeb3.eth.defaultAccount})
+    .then(res => console.log(res))
   }
   componentWillUnmount(){
     // 如果没有完成就退出，存在本地

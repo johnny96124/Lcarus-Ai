@@ -1,54 +1,16 @@
 [
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
-				"name": "interfaceId",
-				"type": "bytes4"
-			}
-		],
-		"name": "supportsInterface",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "tokenId",
+				"name": "_tokenId",
 				"type": "uint256"
 			}
 		],
-		"name": "getApproved",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
+		"name": "acceptBid",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -64,6 +26,34 @@
 			}
 		],
 		"name": "approve",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "bid",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "cancelAuction",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -91,63 +81,34 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "withdrawBid",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_minBidIncreasePercent",
-				"type": "uint256"
-			}
-		],
-		"name": "updateMinimumBidIncreasePercent",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "platformFirstSalePercentages",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "masterTokenId",
+				"name": "_tokenId",
 				"type": "uint256"
 			},
 			{
-				"name": "artworkTokenURI",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "makeBuyPrice",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_masterTokenId",
+				"type": "uint256"
+			},
+			{
+				"name": "_artworkTokenURI",
 				"type": "string"
 			},
 			{
-				"name": "layerCount",
-				"type": "uint256"
+				"name": "_controlTokenArtists",
+				"type": "address[]"
 			}
 		],
 		"name": "mintArtwork",
@@ -157,122 +118,29 @@
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "from",
-				"type": "address"
+				"name": "_tokenId",
+				"type": "uint256"
 			},
 			{
-				"name": "to",
-				"type": "address"
+				"name": "_prepTime",
+				"type": "uint256"
 			},
 			{
-				"name": "tokenId",
+				"name": "_auctionTime",
+				"type": "uint256"
+			},
+			{
+				"name": "_reservePrice",
 				"type": "uint256"
 			}
 		],
-		"name": "transferFrom",
+		"name": "openAuction",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "waiveFirstSaleRequirement",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "acceptBid",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"name": "expectedRemainingUpdates",
-				"type": "int256"
-			}
-		],
-		"name": "takeBuyPrice",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenOfOwnerByIndex",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "maximumAuctionPeriod",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -292,415 +160,6 @@
 			}
 		],
 		"name": "safeTransferFrom",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "bid",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenDidHaveFirstSale",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "platformSecondSalePercentages",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenByIndex",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "expectedTokenSupply",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "failedTransferCredits",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "ownerOf",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "controlTokenId",
-				"type": "uint256"
-			},
-			{
-				"name": "controlTokenURI",
-				"type": "string"
-			},
-			{
-				"name": "leverMinValues",
-				"type": "int256[]"
-			},
-			{
-				"name": "leverMaxValues",
-				"type": "int256[]"
-			},
-			{
-				"name": "numAllowedUpdates",
-				"type": "int256"
-			},
-			{
-				"name": "additionalCollaborators",
-				"type": "address[]"
-			}
-		],
-		"name": "setupControlToken",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenURILocked",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "controlTokenId",
-				"type": "uint256"
-			},
-			{
-				"name": "leverIds",
-				"type": "uint256[]"
-			},
-			{
-				"name": "newValues",
-				"type": "int256[]"
-			}
-		],
-		"name": "useControlToken",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "controlTokenMapping",
-		"outputs": [
-			{
-				"name": "numControlLevers",
-				"type": "uint256"
-			},
-			{
-				"name": "numRemainingUpdates",
-				"type": "int256"
-			},
-			{
-				"name": "exists",
-				"type": "bool"
-			},
-			{
-				"name": "isSetup",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "controlTokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getNumRemainingControlUpdates",
-		"outputs": [
-			{
-				"name": "",
-				"type": "int256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "newPlatformAddress",
-				"type": "address"
-			}
-		],
-		"name": "updatePlatformAddress",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "cancelAuction",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "controlTokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getControlToken",
-		"outputs": [
-			{
-				"name": "",
-				"type": "int256[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "sellingState",
-		"outputs": [
-			{
-				"name": "buyPrice",
-				"type": "uint256"
-			},
-			{
-				"name": "reservePrice",
-				"type": "uint256"
-			},
-			{
-				"name": "auctionStartTime",
-				"type": "uint256"
-			},
-			{
-				"name": "auctionEndTime",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "setApprovalForAll",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "uniqueTokenCreators",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "withdrawAllFailedCredits",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -733,22 +192,95 @@
 		"type": "function"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
-				"name": "",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalForAll",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_controlTokenId",
+				"type": "uint256"
+			},
+			{
+				"name": "_controlTokenURI",
+				"type": "string"
+			},
+			{
+				"name": "_leverMinValues",
+				"type": "int256[]"
+			},
+			{
+				"name": "_leverMaxValues",
+				"type": "int256[]"
+			},
+			{
+				"name": "_numAllowedUpdates",
+				"type": "int256"
+			},
+			{
+				"name": "_additionalCollaborators",
+				"type": "address[]"
+			}
+		],
+		"name": "setupControlToken",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_tokenId",
+				"type": "uint256"
+			},
+			{
+				"name": "_expectedRemainingUpdates",
+				"type": "int256"
+			}
+		],
+		"name": "takeBuyPrice",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "tokenId",
 				"type": "uint256"
 			}
 		],
-		"name": "creatorWhitelist",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
+		"name": "transferFrom",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -763,20 +295,6 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "artistSecondSalePercentage",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -798,22 +316,31 @@
 		"type": "function"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
-				"name": "tokenId",
+				"name": "_minBidIncreasePercent",
 				"type": "uint256"
 			}
 		],
-		"name": "tokenURI",
-		"outputs": [
+		"name": "updateMinimumBidIncreasePercent",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
-				"type": "string"
+				"name": "_newPlatformAddress",
+				"type": "address"
 			}
 		],
+		"name": "updatePlatformAddress",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -824,141 +351,77 @@
 				"type": "uint256"
 			},
 			{
-				"name": "_startTime",
+				"name": "_platformFirstSalePercentage",
 				"type": "uint256"
 			},
 			{
-				"name": "_endTime",
-				"type": "uint256"
-			},
-			{
-				"name": "_reservePrice",
+				"name": "_platformSecondSalePercentage",
 				"type": "uint256"
 			}
 		],
-		"name": "openAuction",
+		"name": "updatePlatformSalePercentage",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
-				"name": "",
-				"type": "address"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "permissionedControllers",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "minBidIncreasePercent",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "pendingBids",
-		"outputs": [
-			{
-				"name": "bidder",
-				"type": "address"
-			},
-			{
-				"name": "amount",
+				"name": "controlTokenId",
 				"type": "uint256"
 			},
 			{
-				"name": "exists",
-				"type": "bool"
+				"name": "leverIds",
+				"type": "uint256[]"
+			},
+			{
+				"name": "newValues",
+				"type": "int256[]"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
+		"name": "useControlToken",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"name": "amount",
+				"name": "_tokenId",
 				"type": "uint256"
 			}
 		],
-		"name": "makeBuyPrice",
+		"name": "waiveFirstSaleRequirement",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "platformAddress",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "creator",
+				"name": "_creator",
 				"type": "address"
 			},
 			{
-				"name": "masterTokenId",
+				"name": "_masterTokenId",
 				"type": "uint256"
 			},
 			{
-				"name": "layerCount",
+				"name": "_layerCount",
 				"type": "uint256"
 			},
 			{
-				"name": "platformFirstSalePercentage",
+				"name": "_platformFirstSalePercentage",
 				"type": "uint256"
 			},
 			{
-				"name": "platformSecondSalePercentage",
+				"name": "_platformSecondSalePercentage",
 				"type": "uint256"
 			}
 		],
@@ -972,59 +435,37 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"name": "platformFirstSalePercentage",
-				"type": "uint256"
-			},
-			{
-				"name": "platformSecondSalePercentage",
-				"type": "uint256"
+				"name": "_userAddr",
+				"type": "address"
 			}
 		],
-		"name": "updatePlatformSalePercentage",
+		"name": "whitelistUser",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"name": "operator",
-				"type": "address"
-			}
-		],
-		"name": "isApprovedForAll",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
+		"constant": false,
+		"inputs": [],
+		"name": "withdrawAllFailedCredits",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "maximumAuctionPreparingTime",
-		"outputs": [
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
+				"name": "_tokenId",
 				"type": "uint256"
 			}
 		],
+		"name": "withdrawBid",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -1345,5 +786,615 @@
 		],
 		"name": "ApprovalForAll",
 		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "artistSecondSalePercentage",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "artistWhitelist",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "controlTokenMapping",
+		"outputs": [
+			{
+				"name": "numControlLevers",
+				"type": "uint256"
+			},
+			{
+				"name": "numRemainingUpdates",
+				"type": "int256"
+			},
+			{
+				"name": "exists",
+				"type": "bool"
+			},
+			{
+				"name": "isSetup",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "creatorWhitelist",
+		"outputs": [
+			{
+				"name": "creator",
+				"type": "address"
+			},
+			{
+				"name": "layerCount",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "expectedTokenSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "failedTransferCredits",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "controlTokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getControlToken",
+		"outputs": [
+			{
+				"name": "",
+				"type": "int256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "controlTokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getNumRemainingControlUpdates",
+		"outputs": [
+			{
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTokenOnSale",
+		"outputs": [
+			{
+				"name": "tokenIds",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "maximumAuctionPeriod",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "maximumAuctionPreparingTime",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "minBidIncreasePercent",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "pendingBids",
+		"outputs": [
+			{
+				"name": "bidder",
+				"type": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"name": "exists",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "permissionedControllers",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "platformAddress",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "platformFirstSalePercentages",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "platformSecondSalePercentages",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "sellingState",
+		"outputs": [
+			{
+				"name": "buyPrice",
+				"type": "uint256"
+			},
+			{
+				"name": "reservePrice",
+				"type": "uint256"
+			},
+			{
+				"name": "auctionStartTime",
+				"type": "uint256"
+			},
+			{
+				"name": "auctionEndTime",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "interfaceId",
+				"type": "bytes4"
+			}
+		],
+		"name": "supportsInterface",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenByIndex",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenDidHaveFirstSale",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenOfOwnerByIndex",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURILocked",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "uniqueTokenCreators",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]

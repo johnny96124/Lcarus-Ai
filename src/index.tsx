@@ -5,26 +5,12 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { HEADC } from './component/head/head';
 import {NoPerDom} from './routeconfig'
 import './index.less';
-const minterface = require('./interface/marsteContract.json')
 
 declare const window: any;
 
-import   Web3  from 'web3'
-// 0x63a2123ff19d62907f6e1a79011d2571d97934f4
-const mainAddress = '0xe2C579f524C9CdC5d82819E6c2BB7D9bBb291c8C' 
 
 
 
-let web3Object = {
-  web3: {},
-  managerContract: {}
-}
-
-if (window.ctxWeb3) {
-  const web3 =  new Web3(window.ctxWeb3.currentProvider)
-  const managerContract = new web3.eth.Contract(minterface, mainAddress)
-  web3Object = {web3, managerContract}
-}
 
 import 'antd/dist/antd.css';
 
@@ -32,10 +18,6 @@ const obj = {
   lan: 'zn',
   ChangeLan: (value) => {
     obj.lan = value;
-  },
-  web3Object: {
-    web3: {},
-    managerContract: {}
   },
   hasLoginWallet: false
 };
@@ -62,15 +44,13 @@ class APP extends React.Component {
           document.querySelector('body').style.opacity = '1';
         }, 1500);
       },
-      web3Object: web3Object,
-      hasLoginWallet: false
+      hasLoginWallet: true
     };
   }
   state: {
     lan: 'zn',
     ChangeLan: any,
-    web3Object: any,
-    hasLoginWallet: false
+    hasLoginWallet: boolean
   }
   componentDidMount(){
     const _this = this
